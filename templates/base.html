@@ -1,6 +1,6 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -13,6 +13,7 @@
     {% block corecss %}
     <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block corejs %}
@@ -26,11 +27,47 @@
     <title>Buddy Foodtruck</title>
   </head>
   <body>
-  <header class="container-fluid fixed-top">
-    
+    <header class="container-fluid fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <a class="navbar-brand" href="#">Buddy Foodtruck</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarMobile" aria-controls="navbarMobile"
+                    aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="#">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search">Search</i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="collapse navbar-collapse" id="navbarMobile">
+                    <ul class="navbar-nav mr-auto list-inline text-center ">
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link" href="#">Products</a>
+                        </li>
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link" href="#">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
 
-    
-  </header>
+        
+    </header>
 
   {% if messages %}
     <div class="message-container"></div>
