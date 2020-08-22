@@ -17,11 +17,11 @@ class Order(models.Model):
 
     user_id = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     total_price = models.IntegerField()
-    order_date = models.DateField()
+    order_date = models.DateField(auto_now_add=True)
     payment_status = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.name
+    def __int__(self):
+        return self.user_id
 
 
 class Products(models.Model):
@@ -32,7 +32,7 @@ class Products(models.Model):
     product_type = models.CharField(max_length=254)
 
     def __str__(self):
-        return self.name
+        return self.product_name
 
 
 class Order_Products(models.Model):
@@ -41,4 +41,4 @@ class Order_Products(models.Model):
     product_id = models.ForeignKey('Products', null=True, on_delete=models.SET_NULL)
     
     def __str__(self):
-        return self.name      
+        return self.order_id
